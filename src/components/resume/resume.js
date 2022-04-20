@@ -39,7 +39,7 @@ const ResumeComponent = ({ match }) => {
     const fetchedData = async () => {
       // "https://cv-generator-mern.herokuapp.com/api"
       await axios
-        .get(`http://localhost:9990/api/${match.params.id}`)
+        .get(process.env.REACT_APP_BACKEND_URL+`/${match.params.id}`)
         .then((res) => {
           if (res.data.success) {
             setMounted(true);
